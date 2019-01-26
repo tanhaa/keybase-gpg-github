@@ -94,6 +94,11 @@ You can run `echo "test" | gpg --clearsign` to find the underlying issue.
 
 If the above succeeds without error, then there is likely a configuration problem that is preventing git from selecting or using the secret key.  Confirm that your gitconfig `user.email` matches the secret key that you are using for signing.
 
+If you get: 
+```gpg: signing failed: Inappropriate ioctl for device```
+
+set: ```export GPG_TTY=$(tty)```
+
 ## Optional: Set as default GPG key
 
 ```sh
